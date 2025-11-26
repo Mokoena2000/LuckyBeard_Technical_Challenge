@@ -10,7 +10,7 @@ If you get stagnant with free time and dont know what to do dont worry our AI as
 
 TECH STACK
 
-Python / Django ("My personal favorite and the best(not being biased)") - For back-end and user authentication also will be writing my unit test in python
+Python / Django  - For back-end and user authentication also will be writing my unit test in python
 HTML/ CSS - For a simple forntend and ui nothing much 
 Postman - for API and API integration
 Mysql - For the database to save the user login details and task/ wanted to use sqlite3 but because im planning on deploying the site with pythonanywhere which only allows mysql free tier its the go to
