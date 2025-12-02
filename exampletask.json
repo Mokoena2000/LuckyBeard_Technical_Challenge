@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Buy groceries",
+    "description": "Milk, Bread, Cheese",
+    "complete": false
+  },
+  {
+    "title": "Pay rent",
+    "description": "Due on the 1st",
+    "complete": true
+  }
+]
