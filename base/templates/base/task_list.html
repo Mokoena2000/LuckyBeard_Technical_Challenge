@@ -8,10 +8,14 @@
     </div>
 
     {% if request.user.is_authenticated %}
-    <a href="{% url 'logout' %}">Logout</a> {% else %}
-    <a href="{% url 'login' %}">Login</a> {% endif %}
+    <form method="post" action="{% url 'logout' %}" style="display: flex; align-items: center;">
+        {% csrf_token %}
+        <button type="submit" class="logout-link">Logout</button>
+    </form>
+    {% else %}
+    <a href="{% url 'login' %}">Login</a> 
+    {% endif %}
 </div>
-
 
 <div id="search-add-wrapper">
     <form method="GET" style="display: flex;">

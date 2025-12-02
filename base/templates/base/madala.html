@@ -1,0 +1,48 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+<div class="header-bar">
+    <div>
+        <h1>🤖 Ask Madala 2.0</h1>
+        <h3 style="margin:0">Context-Aware AI Assistant</h3>
+    </div>
+    <a href="{% url 'tasks' %}">Back to Tasks</a>
+</div>
+
+<div class="card-body">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div style="text-align: center; padding: 20px;">
+            
+            <!-- City Input -->
+            <label><strong>Where are you?</strong></label>
+            <input type="text" name="city" placeholder="e.g. Cape Town..." value="{{ city }}" 
+                   style="padding: 10px; width: 80%; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ddd;">
+            
+            <br>
+
+            <!-- Mood Selector -->
+            <label><strong>How are you feeling?</strong></label>
+            <select name="mood" style="padding: 10px; width: 80%; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ddd;">
+                <option value="productive">Productive ⚡</option>
+                <option value="lazy">Lazy 😴</option>
+                <option value="adventurous">Adventurous 🌍</option>
+                <option value="stressed">Stressed 😫</option>
+                <option value="hungry">Hungry 🍔</option>
+            </select>
+            
+            <br><br>
+            <input class="button" type="submit" value="Get Smart Suggestions">
+        </div>
+    </form>
+
+    {% if suggestion %}
+    <div style="background-color: #f0fdf4; border: 1px solid #bbf7d0; padding: 20px; border-radius: 10px; margin-top: 20px; white-space: pre-line;">
+        <h3 style="color: #166534; margin-top: 0;">✨ Madala's Plan:</h3>
+        {{ suggestion }}
+    </div>
+    {% endif %}
+</div>
+
+{% endblock content %}
